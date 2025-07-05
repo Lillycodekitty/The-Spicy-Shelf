@@ -108,6 +108,16 @@ header {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
+.shelf-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-image: url('https://lillycodekitty.github.io/The-Spicy-Shelf/assets/wood.jpg'); 
+  background-size: cover;
+}
+
 .book-card {
   width: 150px;
   background-color: #121212;

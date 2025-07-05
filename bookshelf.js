@@ -85,9 +85,14 @@ closeSettingsBtn.addEventListener('click', () => {
 // Render all books on the shelf
 function renderBooks() {
   bookshelf.innerHTML = '';
-  books.forEach(book => {
-    const card = document.createElement('div');
-    card.classList.add('book-card');
+  const booksPerShelf = 6;
+  for (let i = 0; i < books.length; i += booksPerShelf) {
+    const shelf = document.createElement('div');
+    shelf.classList.add('shelf-row');
+    const slice = books.slice(i, i + booksPerShelf);
+    slice.forEach(book => {
+        const card = document.createElement('div');
+        card.classList.add('book-card');
 
     card.innerHTML = `
       ${book.image ? `<img src="${book.image}" alt="Cover" />` : ''}
@@ -98,8 +103,10 @@ function renderBooks() {
       ${book.link ? `<a href="${book.link}" target="_blank">Goodreads</a>` : ''}
     `;
 
-    bookshelf.appendChild(card);
+    shelf.appendChild(card);
   });
+    bookshelf.appendChild(shelf);
+  }
 }
 
 // Save books to localStorage
