@@ -67,14 +67,14 @@ function renderBooks() {
   books.forEach(book => {
     const card = document.createElement('div');
     card.classList.add('book-card');
-    card.innerHTML = `
-      ${book.image ? <img src="${book.image}" alt="Cover" /> : ''}
-      <h3>${book.title}</h3>
-      <p><em>${book.author}</em></p>
-      <p>🔥 ${book.spice || '-'} | ⭐ ${book.rating || '-'}</p>
-      <blockquote>${book.quote || ''}</blockquote>
-      ${book.link ? <a href="${book.link}" target="_blank">Goodreads</a> : ''}
-    `;
+  card.innerHTML = `
+  ${book.image ? <img src="${book.image}" alt="Cover" /> : ''}
+  <h3>${book.title}</h3>
+  <p><em>${book.author}</em></p>
+  <p>🔥 ${book.spice || '-'} | ⭐ ${book.rating || '-'}</p>
+  <blockquote>${book.quote || ''}</blockquote>
+  ${book.link ? <a href="${book.link}" target="_blank">Goodreads</a> : ''}
+`;
     bookshelf.appendChild(card);
   });
 }
