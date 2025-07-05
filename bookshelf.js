@@ -69,7 +69,7 @@ function renderBooks() {
     card.classList.add('book-card');
 
     card.innerHTML = `
-      ${book.image ? <img src="${book.image}" alt="Cover" /> : ''}
+      ${book.image ? '<img src="${book.image}" alt="Cover" />' : ''}
       <h3>${book.title}</h3>
       <p><em>${book.author}</em></p>
       <p>🔥 ${book.spice || '-'} | ⭐ ${book.rating || '-'}</p>
