@@ -73,8 +73,8 @@ function renderBooks() {
       <h3>${book.title}</h3>
       <p><em>${book.author}</em></p>
       <p>🔥 ${book.spice || '-'} | ⭐ ${book.rating || '-'}</p>
-      ${book.quote ? <blockquote>${book.quote}</blockquote> : ''}
-      ${book.link ? <a href="${book.link}" target="_blank">Goodreads</a> : ''}
+      ${book.quote ? `<blockquote>${book.quote}</blockquote>` : ''}
+      ${book.link ? `<a href="${book.link}" target="_blank">Goodreads</a>` : ''}
     `;
 
     bookshelf.appendChild(card);
