@@ -10,9 +10,11 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('./assets/flower.png'); /* Replace with your image */
+  background-image: url('./assets/flower.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   backdrop-filter: blur(2px);
 }
 
