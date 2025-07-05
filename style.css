@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('/assets/flower.png'); /* Replace with your image */
+  background-image: url('./assets/flower.png'); /* Replace with your image */
   background-size: cover;
   background-repeat: no-repeat;
   backdrop-filter: blur(2px);
