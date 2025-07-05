@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Spicy Shelf</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="shelfTitle">Your Shelf</h1>
+    <button id="settingsBtn">⚙</button>
+  </header>
+
+  <main id="bookshelf">
+    <!-- Book cards will appear here -->
+  </main>
+
+  <button id="addBookBtn">＋</button>
+
+  <!-- Add Book Modal -->
+  <div id="bookModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Add a Book</h2>
+      <input type="text" id="bookTitle" placeholder="Book Title" />
+      <input type="text" id="bookAuthor" placeholder="Author" />
+      <input type="number" id="spiceRating" placeholder="Spice Level (1-5)" min="1" max="5" />
+      <input type="number" id="bookRating" placeholder="Book Rating (1-5)" min="1" max="5" />
+      <textarea id="favoriteQuote" placeholder="Favorite Quote"></textarea>
+      <input type="url" id="goodreadsLink" placeholder="Goodreads URL" />
+      <input type="file" id="bookImage" accept="image/*" />
+      <button id="saveBookBtn">Save</button>
+      <button id="closeModalBtn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="bookshelf.js"></script>
+</body>
+</html>
