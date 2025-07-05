@@ -5,6 +5,18 @@ const closeModalBtn = document.getElementById('closeModalBtn');
 const saveBookBtn = document.getElementById('saveBookBtn');
 const bookshelf = document.getElementById('bookshelf');
 
+const settingsBtn = document.getElementById('settingsBtn');
+const settingsPanel = document.getElementById('settingsPanel');
+const closeSettingsBtn = document.getElementById('closeSettingsBtn');
+
+settingsBtn.addEventListener('click', () => {
+  settingsPanel.classList.remove('hidden');
+});
+
+closeSettingsBtn.addEventListener('click', () => {
+  settingsPanel.classList.add('hidden');
+});
+
 let books = [];
 
 // Show modal on "+" click
@@ -59,6 +71,15 @@ saveBookBtn.addEventListener('click', () => {
   } else {
     reader.onloadend();
   }
+});
+
+// Settings button toggle
+settingsBtn.addEventListener('click', () => {
+  settingsPanel.classList.remove('hidden');
+});
+
+closeSettingsBtn.addEventListener('click', () => {
+  settingsPanel.classList.add('hidden');
 });
 
 // Render all books on the shelf
