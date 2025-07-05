@@ -1,38 +1,40 @@
+// Get the elements
 const emailInput = document.getElementById('emailInput');
 const loginBtn = document.getElementById('loginBtn');
 const loginError = document.getElementById('loginError');
 
+// Step 1: Send sign-in link
 loginBtn.addEventListener('click', () => {
   const email = emailInput.value.trim();
-  loginError.textContent = '';
 
   if (!email || !validateEmail(email)) {
-    loginError.textContent = 'Please enter a valid email address, princess.';
+    loginError.textContent = 'Please enter a valid email, princess.';
     return;
   }
 
-  auth.signInWithEmailLink(email, window.location.href)
+  const actionCodeSettings = {
+    url: 'https://lillycodekitty.github.io/The-Spicy-Shelf/bookshelf.html',
+    handleCodeInApp: true
+  };
+
+  auth.sendSignInLinkToEmail(email, actionCodeSettings)
     .then(() => {
       localStorage.setItem('emailForSignIn', email);
-      alert('Email sent! Check your inbox to complete sign-in.');
+      alert('Check your email, kitten. The magic login link is waiting for you.');
     })
     .catch(error => {
       loginError.textContent = error.message;
     });
 });
 
-// Simple email validation
-function validateEmail(email) {
-  return /\S+@\S+\.\S+/.test(email);
-}
-
-// Check if this is sign-in via email link
+// Step 2: Complete sign-in when email link is clicked
 window.addEventListener('load', () => {
   if (auth.isSignInWithEmailLink(window.location.href)) {
     let email = localStorage.getItem('emailForSignIn');
     if (!email) {
-      email = prompt('Please provide your email for confirmation, princess:');
+      email = prompt('Enter your email again to confirm, baby:');
     }
+
     auth.signInWithEmailLink(email, window.location.href)
       .then(() => {
         localStorage.removeItem('emailForSignIn');
@@ -43,3 +45,8 @@ window.addEventListener('load', () => {
       });
   }
 });
+
+// Helper: validate email
+function validateEmail(email) {
+  return /\S+@\S+\.\S+/.test(email);
+}
